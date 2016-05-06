@@ -29,25 +29,25 @@ setup() {
   fi
 
   # Zshのセットアップ
-  if ! test has zsh; then
+  if ! test (has zsh); then
     install_package "zsh zsh-completions zsh-syntax-highlighting"
   fi 
   symlink "$dotfiles/.zshrc" "$HOME/.zshrc"
 
   # Vimのセットアップ
-  if ! test has vim; then
+  if ! test (has vim); then
     install_package "vim"
   fi
   symlink "$dotfiles/.vimrc" "$HOME/.vimrc"
   symlink "$dotfiles/.vim"   "$HOME/.vim"
 
   # Fcitxのセットアップ
-  if ! test has fcitx; then
+  if ! test (has fcitx); then
     install_package "fcitx-mozc fcitx-im fcitx-configtool"
   fi
 
   # XMonadのセットアップ
-  if ! test has xmonad; then
+  if ! test (has xmonad); then
     install_package "xmonad xmonad-contrib xmobar xcompmgr dmenu2"
   fi
   symlink "$dotfiles/.xmonad" "$HOME/.xmonad"
