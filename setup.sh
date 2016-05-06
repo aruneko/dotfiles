@@ -4,7 +4,7 @@ set -e
 set -u
 
 setup() {
-  dotfiles=$home/.dotfiles
+  dotfiles=$HOME/.dotfiles
 
   # パッケージの存在確認
   has() {
@@ -22,7 +22,7 @@ setup() {
   }
 
   # dotfilesのセットアップ
-  if [-d "$dotfiles" ]; then
+  if [ -d "$dotfiles" ]; then
     (cd "$dotfiles" && git pull --rebase)
   else
     git clone https://github.com/aruneko/dotfiles "$dotfiles"
@@ -52,3 +52,5 @@ setup() {
   fi
   symlink "$dotfiles/.xmonad" "$HOME/.xmonad"
 }
+
+setup
