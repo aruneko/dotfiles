@@ -30,7 +30,7 @@ setup() {
 
   # Zshのセットアップ
   if ! test has zsh; then
-    intall_package "zsh zsh-completions zsh-syntax-highlighting"
+    install_package "zsh zsh-completions zsh-syntax-highlighting"
   fi 
   symlink "$dotfiles/.zshrc" "$HOME/.zshrc"
 
