@@ -38,9 +38,9 @@ main = do
     ]
 
 myStartupHook = do
-  spawnOnce "fcitx"
+  spawnOnce "fcitx &"
   spawnOnce "xcompmgr"
-  spawnOnce "feh --bg-scale /usr/share/archlinux/wallpaper/archlinux-poolclouds.jpg"
+  spawnOnce "nitrogen --restore"
   spawnOnce "numlockx on"
 
 myLogHook h = dynamicLogWithPP $ wsPP { ppOutput = hPutStrLn h }
@@ -52,7 +52,8 @@ wsPP = xmobarPP
   , ppHidden          = xmobarColor "#dddddd" "" . wrap " " " " 
   , ppHiddenNoWindows = xmobarColor "#777777" "" . wrap " " " " 
   , ppUrgent          = xmobarColor "#ff0000" "" . wrap " " " " 
+  , ppVisible         = xmobarColor "#33ff88" "" . wrap " " " "
   , ppSep             = "     "
-  --, ppLayout          = xmobarColor "#aaaaaa" "" . wrap " " " " 
+  , ppLayout          = xmobarColor "#aaaaaa" "" . wrap " " " " 
   , ppTitle           = xmobarColor "#ffffff" "" . wrap " " " " 
   }

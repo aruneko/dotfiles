@@ -6,6 +6,8 @@
 # 環境変数
 export LANG=ja_JP.UTF-8
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+export GEM_HOME=$(ruby -e 'print Gem.user_dir')
 
 # 色を使用出来るようにする
 autoload -Uz colors
