@@ -5,3 +5,4 @@ xrandr --output DVI-I-1 --auto --left-of HDMI-0
 xmodmap -e "remove Lock = Caps_Lock"
 xmodmap -e "keysym Caps_Lock = Control_L"
 xmodmap -e "add Control = Control_L"
+stalonetray -i 30 --window-type normal --geometry 1x1+1890+0 --window-strut none --background '#1c1c1c' --icon-gravity NE &

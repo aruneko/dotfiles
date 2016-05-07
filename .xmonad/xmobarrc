@@ -1,7 +1,7 @@
 Config { font = "xft:Source Han Sans JP Normal:size=11"
        , bgColor = "#1c1c1c"
        , fgColor = "#757575"
-       , position = TopSize C 100 30
+       , position = TopSize L 98 30
        , lowerOnStart = False
        , overrideRedirect = False
        , border = NoBorder

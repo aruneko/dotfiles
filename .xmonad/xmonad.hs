@@ -1,6 +1,7 @@
 import XMonad
 import XMonad.Config.Desktop
 
+import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.DynamicLog
@@ -27,6 +28,7 @@ main = do
     , handleEventHook    = fullscreenEventHook
     , layoutHook         = spacing 2 $ avoidStruts $ layoutHook desktopConfig
     , logHook            = myLogHook wsbar
+    , manageHook         = manageDocks <+> manageHook defaultConfig <+> myManageHook
     }
 
     `removeKeysP`
@@ -42,6 +44,9 @@ myStartupHook = do
   spawnOnce "xcompmgr"
   spawnOnce "nitrogen --restore"
   spawnOnce "numlockx on"
+
+myManageHook = composeAll
+  [ resource =? "stalonetray" --> doIgnore ]
 
 myLogHook h = dynamicLogWithPP $ wsPP { ppOutput = hPutStrLn h }
 
