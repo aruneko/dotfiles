@@ -46,11 +46,11 @@ setup() {
     install_package fcitx-mozc fcitx-im fcitx-configtool
   fi
 
-  # XMonadのセットアップ
+  # Qtileのセットアップ
   if ! has xmonad; then
-    install_package xmonad xmonad-contrib xmobar xcompmgr dmenu2 stalonetray nitrogen archlinux-wallpaper 
+    install_package qtile xcompmgr dmenu2 stalonetray nitrogen archlinux-wallpaper 
   fi
-  symlink "$dotfiles/.xmonad" "$HOME/.xmonad"
+  symlink "$dotfiles/qtile" "$HOME/.config/qtile"
 }
 
 setup
