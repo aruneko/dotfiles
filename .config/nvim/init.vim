@@ -53,3 +53,5 @@ nnoremap : ;
 set backspace=indent,eol,start
 " マウスの無効化
 set mouse=
+" ステータスライン
+set statusline=%F%=[%l/%L]
